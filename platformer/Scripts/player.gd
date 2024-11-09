@@ -1,5 +1,6 @@
 extends CharacterBody2D
 
+var damage = 1
 const SPEED = 100.0
 const JUMP_VELOCITY = -400.0
 const bullet_speed = 300.0
@@ -31,3 +32,6 @@ func _physics_process(delta: float) -> void:
 		_animated_sprite.play("Idle")
 
 	move_and_slide()
+	
+	#var screen_size = get_viewport_rect().size
+	#global_position = global_position.clamp(Vector2(0,0),screen_size)

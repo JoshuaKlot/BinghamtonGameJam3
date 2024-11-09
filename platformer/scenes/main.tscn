@@ -1,24 +1,21 @@
-<<<<<<< Updated upstream
-[gd_scene load_steps=4 format=3 uid="uid://dybkast5eobiq"]
-=======
 [gd_scene load_steps=10 format=3 uid="uid://dybkast5eobiq"]
->>>>>>> Stashed changes
 
 [ext_resource type="PackedScene" uid="uid://dyfxlgagnxf2k" path="res://scenes/player.tscn" id="1_0hff1"]
 [ext_resource type="PackedScene" uid="uid://dmypeyjjb8hn1" path="res://scenes/tile_map.tscn" id="2_2o4me"]
 [ext_resource type="Texture2D" uid="uid://duo4hrdp7px3s" path="res://gamejamdoorlocked.webp" id="3_3c0yr"]
+[ext_resource type="PackedScene" uid="uid://s7smo057chtv" path="res://scenes/enemy.tscn" id="4_86tbr"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_4c5gl"]
 size = Vector2(165, 14)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_cxg0k"]
-size = Vector2(191.5, 62.5)
+size = Vector2(191.5, 48.375)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_tf1bn"]
-size = Vector2(548, 46)
+size = Vector2(548, 42)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_a6bfc"]
-size = Vector2(46, 479.625)
+size = Vector2(43, 479.625)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ns0hq"]
 size = Vector2(85, 49)
@@ -26,37 +23,73 @@ size = Vector2(85, 49)
 [node name="Main" type="Node"]
 
 [node name="TileMapLayer" parent="." instance=ExtResource("2_2o4me")]
+visible = false
 
 [node name="TextureRect" type="TextureRect" parent="."]
-offset_left = -137.0
+offset_left = -161.0
 offset_top = -248.0
-offset_right = 200.0
-offset_bottom = -13.0
+offset_right = 479.0
+offset_bottom = 232.0
 texture = ExtResource("3_3c0yr")
 stretch_mode = 4
 
-[node name="CharacterBody2D" parent="." instance=ExtResource("1_0hff1")]
-position = Vector2(-2, -131)
+[node name="Player" parent="." instance=ExtResource("1_0hff1")]
+unique_name_in_owner = true
+position = Vector2(-26, -131)
 
 [node name="Node2D" type="Node2D" parent="."]
-position = Vector2(23, 0)
+position = Vector2(-1, 0)
 
 [node name="Camera2D" type="Camera2D" parent="Node2D"]
 position = Vector2(160, -8)
 scale = Vector2(0.5, 0.5)
-<<<<<<< Updated upstream
-=======
 
 [node name="enemy" parent="." instance=ExtResource("4_86tbr")]
-position = Vector2(397, 119)
+position = Vector2(373, 119)
 scale = Vector2(2, 2)
 
 [node name="enemy2" parent="." instance=ExtResource("4_86tbr")]
-position = Vector2(394, 38)
+position = Vector2(370, 38)
 scale = Vector2(2, 2)
 
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+position = Vector2(120, -124)
+collision_layer = 8
+
+[node name="CollisionShape2D7" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(38.5, -117)
+shape = SubResource("RectangleShape2D_4c5gl")
+
+[node name="CollisionShape2D4" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(-139.75, -96)
+shape = SubResource("RectangleShape2D_cxg0k")
+one_way_collision_margin = 1.1
+
+[node name="CollisionShape2D5" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(217, -96)
+shape = SubResource("RectangleShape2D_cxg0k")
+
+[node name="CollisionShape2D3" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(39, 335)
+shape = SubResource("RectangleShape2D_tf1bn")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(-259.5, 115.875)
+shape = SubResource("RectangleShape2D_a6bfc")
+one_way_collision_margin = 1.5
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(337, 116)
+shape = SubResource("RectangleShape2D_a6bfc")
+one_way_collision_margin = 1.5
+
+[node name="CollisionShape2D6" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(38.5, -85.5)
+shape = SubResource("RectangleShape2D_ns0hq")
+disabled = true
+
 [node name="Walls" type="Area2D" parent="."]
-position = Vector2(144, -124)
+position = Vector2(120, -124)
 collision_layer = 8
 collision_mask = 7
 
@@ -88,13 +121,6 @@ shape = SubResource("RectangleShape2D_a6bfc")
 one_way_collision_margin = 1.5
 
 [node name="CollisionShape2D6" type="CollisionShape2D" parent="Walls"]
-visible = false
 position = Vector2(38.5, -85.5)
 shape = SubResource("RectangleShape2D_ns0hq")
-
-[node name="StaticBody2D" type="StaticBody2D" parent="."]
-visible = false
-position = Vector2(144, -124)
-collision_layer = 8
-collision_mask = 7
->>>>>>> Stashed changes
+disabled = true
