@@ -6,9 +6,15 @@ func _ready() -> void:
 	look_at(get_viewport().get_mouse_position())
 
 func _physics_process(delta: float) -> void:
-	velocity = Vector2(0,1).rotated(rotation) * bulletSpeed
+	velocity = Vector2(1, 0).rotated(rotation) * bulletSpeed
 	move_and_slide()
-	var collision_info = move_and_collide(velocity * delta)
-	if collision_info:
-		queue_free()
-	
+
+
+func _on_area_2d_area_entered(area: Area2D) -> void:
+	#when it hits another area2d (enemy's)
+	#enemy takes damage
+	if area.get_parent().has_method("take_damage"):
+		area.get_parent().take_damage()
+	else: 
+		print("g")
+	queue_free()
