@@ -31,12 +31,6 @@ grow_vertical = 2
 layout_mode = 2
 theme_override_constants/separation = 25
 
-[node name="Label" type="Label" parent="MarginContainer/VBoxContainer"]
-layout_mode = 2
-text = "Pick One Item to Be Discarded"
-label_settings = SubResource("LabelSettings_y7qi0")
-horizontal_alignment = 1
-
 [node name="VBoxContainer2" type="VBoxContainer" parent="MarginContainer/VBoxContainer"]
 layout_mode = 2
 theme_override_constants/separation = 8
@@ -59,6 +53,17 @@ text = "Item #3"
 layout_mode = 2
 text = "Quit
 "
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 2
+offset_left = 211.0
+offset_top = 135.0
+offset_right = 444.0
+offset_bottom = 158.0
+theme_override_font_sizes/font_size = 20
+text = "Pick One Item to Be Discarded"
+label_settings = SubResource("LabelSettings_y7qi0")
+horizontal_alignment = 1
 
 [connection signal="pressed" from="MarginContainer/VBoxContainer/VBoxContainer2/Item1Button" to="." method="_on_item_1_button_pressed"]
 [connection signal="pressed" from="MarginContainer/VBoxContainer/VBoxContainer2/Quit" to="." method="_on_quit_pressed"]

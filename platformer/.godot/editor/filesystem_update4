@@ -6,3 +6,5 @@ res://scenes/enemy.tscn
 res://scenes/move_menu.tscn
 res://scenes/MoveScene.tscn
 res://Scripts/move_scene.gd
+res://scenes/main_menu.tscn
+res://scenes/main_menu.gd
