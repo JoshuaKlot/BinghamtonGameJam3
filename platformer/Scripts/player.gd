@@ -9,12 +9,11 @@ var lastdirection = Vector2.DOWN
 func _physics_process(delta: float) -> void:
 	var bullet = preload("res://scenes/bullet.tscn")
 	var main = get_node("bulletContainer")
-
 	if Input.is_action_just_pressed("shoot"):
 		var instance = bullet.instantiate()
 		main.add_child(instance)
 		instance.global_position = global_position
-		instance.direction = lastdirection
+		
 
 	var direction := Input.get_axis("ui_left", "ui_right")
 	var direction2 := Input.get_axis("ui_up", "ui_down")

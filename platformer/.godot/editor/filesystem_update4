@@ -1,2 +1,3 @@
 res://scenes/main.tscn
 res://Scripts/bullet.gd
+res://Scripts/player.gd
