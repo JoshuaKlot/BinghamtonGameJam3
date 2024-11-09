@@ -45,6 +45,7 @@ shape = SubResource("RectangleShape2D_k83k1")
 [node name="bulletContainer" type="Node" parent="."]
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+rotation = 1.5708
 sprite_frames = SubResource("SpriteFrames_vnqkp")
 animation = &"Walk"
 frame_progress = 0.627981
