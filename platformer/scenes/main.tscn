@@ -1,8 +1,27 @@
+<<<<<<< Updated upstream
 [gd_scene load_steps=4 format=3 uid="uid://dybkast5eobiq"]
+=======
+[gd_scene load_steps=10 format=3 uid="uid://dybkast5eobiq"]
+>>>>>>> Stashed changes
 
 [ext_resource type="PackedScene" uid="uid://dyfxlgagnxf2k" path="res://scenes/player.tscn" id="1_0hff1"]
 [ext_resource type="PackedScene" uid="uid://dmypeyjjb8hn1" path="res://scenes/tile_map.tscn" id="2_2o4me"]
 [ext_resource type="Texture2D" uid="uid://duo4hrdp7px3s" path="res://gamejamdoorlocked.webp" id="3_3c0yr"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_4c5gl"]
+size = Vector2(165, 14)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_cxg0k"]
+size = Vector2(191.5, 62.5)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_tf1bn"]
+size = Vector2(548, 46)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_a6bfc"]
+size = Vector2(46, 479.625)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ns0hq"]
+size = Vector2(85, 49)
 
 [node name="Main" type="Node"]
 
@@ -18,7 +37,6 @@ stretch_mode = 4
 
 [node name="CharacterBody2D" parent="." instance=ExtResource("1_0hff1")]
 position = Vector2(-2, -131)
-collision_layer = 0
 
 [node name="Node2D" type="Node2D" parent="."]
 position = Vector2(23, 0)
@@ -26,3 +44,57 @@ position = Vector2(23, 0)
 [node name="Camera2D" type="Camera2D" parent="Node2D"]
 position = Vector2(160, -8)
 scale = Vector2(0.5, 0.5)
+<<<<<<< Updated upstream
+=======
+
+[node name="enemy" parent="." instance=ExtResource("4_86tbr")]
+position = Vector2(397, 119)
+scale = Vector2(2, 2)
+
+[node name="enemy2" parent="." instance=ExtResource("4_86tbr")]
+position = Vector2(394, 38)
+scale = Vector2(2, 2)
+
+[node name="Walls" type="Area2D" parent="."]
+position = Vector2(144, -124)
+collision_layer = 8
+collision_mask = 7
+
+[node name="CollisionShape2D7" type="CollisionShape2D" parent="Walls"]
+position = Vector2(38.5, -117)
+shape = SubResource("RectangleShape2D_4c5gl")
+
+[node name="CollisionShape2D4" type="CollisionShape2D" parent="Walls"]
+position = Vector2(-139.75, -92.5)
+shape = SubResource("RectangleShape2D_cxg0k")
+one_way_collision_margin = 1.1
+
+[node name="CollisionShape2D5" type="CollisionShape2D" parent="Walls"]
+position = Vector2(217, -92.5)
+shape = SubResource("RectangleShape2D_cxg0k")
+
+[node name="CollisionShape2D3" type="CollisionShape2D" parent="Walls"]
+position = Vector2(39, 333)
+shape = SubResource("RectangleShape2D_tf1bn")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Walls"]
+position = Vector2(-258, 115.875)
+shape = SubResource("RectangleShape2D_a6bfc")
+one_way_collision_margin = 1.5
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="Walls"]
+position = Vector2(336, 115.875)
+shape = SubResource("RectangleShape2D_a6bfc")
+one_way_collision_margin = 1.5
+
+[node name="CollisionShape2D6" type="CollisionShape2D" parent="Walls"]
+visible = false
+position = Vector2(38.5, -85.5)
+shape = SubResource("RectangleShape2D_ns0hq")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+visible = false
+position = Vector2(144, -124)
+collision_layer = 8
+collision_mask = 7
+>>>>>>> Stashed changes

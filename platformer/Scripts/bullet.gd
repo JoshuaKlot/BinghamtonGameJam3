@@ -8,7 +8,24 @@ func _ready() -> void:
 func _physics_process(delta: float) -> void:
 	velocity = Vector2(1, 0).rotated(rotation) * bulletSpeed
 	move_and_slide()
+<<<<<<< Updated upstream
 	var collision_info = move_and_collide(velocity * delta)
 	if collision_info:
 		queue_free()
 	
+=======
+
+
+func _on_area_2d_area_entered(area: Area2D) -> void:
+	#when it hits another area2d (enemy's)
+	#enemy takes damage
+	if area.get_parent().has_method("take_damage"):
+		area.get_parent().take_damage()
+		queue_free()
+	if area.name == "Walls":
+		queue_free()
+
+
+func _on_area_2d_body_entered(body: Node2D) -> void:
+	print (body.name)
+>>>>>>> Stashed changes
