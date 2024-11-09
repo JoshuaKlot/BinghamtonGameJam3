@@ -1,13 +1,16 @@
-[gd_scene load_steps=3 format=3 uid="uid://dybkast5eobiq"]
+[gd_scene load_steps=5 format=3 uid="uid://dybkast5eobiq"]
 
 [ext_resource type="PackedScene" uid="uid://dyfxlgagnxf2k" path="res://scenes/player.tscn" id="1_0hff1"]
 [ext_resource type="PackedScene" uid="uid://dmypeyjjb8hn1" path="res://scenes/tile_map.tscn" id="2_2o4me"]
+[ext_resource type="PackedScene" uid="uid://r77fimuibc7k" path="res://MoveScene.tscn" id="2_xb21l"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_41jvn"]
+size = Vector2(34.5, 20)
 
 [node name="Main" type="Node"]
 
 [node name="CharacterBody2D" parent="." instance=ExtResource("1_0hff1")]
 position = Vector2(2, -141)
-collision_layer = 0
 
 [node name="Camera2D" type="Camera2D" parent="CharacterBody2D"]
 position = Vector2(0, 2)
@@ -15,3 +18,10 @@ scale = Vector2(0.5, 0.5)
 zoom = Vector2(3, 3)
 
 [node name="TileMapLayer" parent="." instance=ExtResource("2_2o4me")]
+position = Vector2(16, -8)
+
+[node name="MoveScene" parent="." instance=ExtResource("2_xb21l")]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="MoveScene"]
+position = Vector2(77, -156)
+shape = SubResource("RectangleShape2D_41jvn")
