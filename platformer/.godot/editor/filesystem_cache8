@@ -1,21 +1,38 @@
 ea4bc82a6ad023ab7ee23ee620429895
-::res://::1731185076
+::res://::1731189547
 character_movement.gd::GDScript::-1::1731185015::0::1::::<>CharacterBody2D<>::
+COUR.TTF::FontFile::2765532275451646969::1731189520::1731189547::1::::<><>::
+COURBD.TTF::FontFile::916640826571842295::1731189520::1731189547::1::::<><>::
+COURBI.TTF::FontFile::4814391066248574909::1731189520::1731189547::1::::<><>::
+COURI.TTF::FontFile::4105883096328924859::1731189520::1731189547::1::::<><>::
 gamejamdoorlocked.webp::CompressedTexture2D::8593714404000626366::1731185015::1731185077::1::::<><>::
 gamejamdoorunlocked.webp::CompressedTexture2D::6949072020786212995::1731185015::1731185077::1::::<><>::
 icon.svg::CompressedTexture2D::7513647314386832877::1731185015::1731185077::1::::<><>::
 player.gd::GDScript::-1::1731185015::0::1::::<>CharacterBody2D<>::
-::res://scenes/::1731185015
-bullet.tscn::PackedScene::5243674040101646541::1731185015::0::1::::<><>::uid://f7758vrdlw2::::res://sprites/bullet.png<>res://Scripts/bullet.gd
-enemy.tscn::PackedScene::1330574384364076103::1731185015::0::1::::<><>::uid://c206ikh2wx6m7::::res://sprites/player.png<>res://Scripts/enemy.gd
-main.tscn::PackedScene::8846466822214351060::1731185015::0::1::::<><>::uid://dyfxlgagnxf2k::::res://scenes/player.tscn<>uid://dmypeyjjb8hn1::::res://scenes/tile_map.tscn<>uid://duo4hrdp7px3s::::res://gamejamdoorlocked.webp<>uid://s7smo057chtv::::res://scenes/enemy.tscn
-player.tscn::PackedScene::8855532637159958268::1731185015::0::1::::<><>::res://Scripts/player.gd<>uid://0p871l52u58k::::res://sprites/PlayerOverhead1.png<>uid://ckfhl535w83or::::res://sprites/PlayerOverhead2.png<>uid://cxlw2ei5wikmw::::res://sprites/PlayerOverhead3.png
-tile_map.tscn::PackedScene::8051992413775446888::1731185015::0::1::::<><>::uid://t0aobh2wr7vd::::res://sprites/block.png
-::res://Scripts/::1731185015
+::res://Files for main/::1731184808
+::res://Files for main/scenes/::1731185159
+::res://Files for main/Scripts/::1731185178
+::res://scenes/::1731189566
+bullet.tscn::PackedScene::5243674040101646541::1731185340::0::1::::<><>::uid://f7758vrdlw2::::res://sprites/bullet.png<>res://Scripts/bullet.gd
+COUR.TTF::FontFile::618493976097700874::1731189566::1731189566::1::::<><>::
+COURBD.TTF::FontFile::6980248364790510732::1731189566::1731189566::1::::<><>::
+COURBI.TTF::FontFile::846738579168111478::1731189566::1731189566::1::::<><>::
+COURI.TTF::FontFile::9067636120786625876::1731189566::1731189566::1::::<><>::
+enemy.tscn::PackedScene::1330574384364076103::1731185340::0::1::::<><>::uid://c206ikh2wx6m7::::res://sprites/player.png<>res://Scripts/enemy.gd
+main.tscn::PackedScene::8846466822214351060::1731189301::0::1::::<><>::uid://dyfxlgagnxf2k::::res://scenes/player.tscn<>uid://dmypeyjjb8hn1::::res://scenes/tile_map.tscn<>uid://duo4hrdp7px3s::::res://gamejamdoorlocked.webp<>uid://s7smo057chtv::::res://scenes/enemy.tscn<>uid://1oiujiid6s0l::::res://scenes/MoveScene.tscn
+main_menu.gd::GDScript::-1::1731188884::0::1::::<>Control<>::
+main_menu.tscn::PackedScene::4176120856235360417::1731189301::0::1::::<><>::res://scenes/main_menu.gd
+MoveScene.tscn::PackedScene::1854333160403227597::1731188913::0::1::::<><>::res://Scripts/move_scene.gd
+move_menu.tscn::PackedScene::5938550785534373465::1731189301::0::1::::<><>::res://Scripts/move_menu.gd
+player.tscn::PackedScene::8855532637159958268::1731189301::0::1::::<><>::res://Scripts/player.gd<>uid://0p871l52u58k::::res://sprites/PlayerOverhead1.png<>uid://ckfhl535w83or::::res://sprites/PlayerOverhead2.png<>uid://cxlw2ei5wikmw::::res://sprites/PlayerOverhead3.png
+tile_map.tscn::PackedScene::8051992413775446888::1731185340::0::1::::<><>::uid://t0aobh2wr7vd::::res://sprites/block.png
+::res://Scripts/::1731189027
 bullet.gd::GDScript::-1::1731185015::0::1::::<>CharacterBody2D<>::
 enemy.gd::GDScript::-1::1731185015::0::1::::<>CharacterBody2D<>::
+move_menu.gd::GDScript::-1::1731184126::0::1::::<>Control<>::
+move_scene.gd::GDScript::-1::1731189027::0::1::::<>Area2D<>::
 player.gd::GDScript::-1::1731185015::0::1::::<>CharacterBody2D<>::
-::res://sprites/::1731185015
+::res://sprites/::1731185077
 block.png::CompressedTexture2D::1385222538682621013::1731185015::1731185077::1::::<><>::
 bullet.png::CompressedTexture2D::12323605599825467::1731185015::1731185077::1::::<><>::
 demon.png::CompressedTexture2D::6065199980772681601::1731185015::1731185077::1::::<><>::

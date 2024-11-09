@@ -1,6 +1,7 @@
-[gd_scene load_steps=3 format=3 uid="uid://b0q7doaxdikbh"]
+[gd_scene load_steps=4 format=3 uid="uid://b0q7doaxdikbh"]
 
 [ext_resource type="Script" path="res://scenes/main_menu.gd" id="1_rdj1l"]
+[ext_resource type="FontFile" uid="uid://bfnv6a48f2q22" path="res://COUR.TTF" id="2_p8np6"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_o256f"]
 
@@ -33,7 +34,8 @@ theme_override_constants/separation = 40
 
 [node name="Label" type="Label" parent="MarginContainer2/VBoxContainer"]
 layout_mode = 2
-theme_override_font_sizes/font_size = 20
+theme_override_fonts/font = ExtResource("2_p8np6")
+theme_override_font_sizes/font_size = 30
 text = "Sunk Cost Survival!!! (Name Pending)"
 label_settings = SubResource("LabelSettings_o256f")
 horizontal_alignment = 1
@@ -44,6 +46,7 @@ theme_override_constants/separation = 8
 
 [node name="Start" type="Button" parent="MarginContainer2/VBoxContainer/VBoxContainer2"]
 layout_mode = 2
+theme_override_fonts/font = ExtResource("2_p8np6")
 text = "Start"
 
 [node name="Quit" type="Button" parent="MarginContainer2/VBoxContainer/VBoxContainer2"]

@@ -1,10 +1,1 @@
-res://scenes/main.tscn
-res://scenes/player.tscn
-res://scenes/tile_map.tscn
-res://scenes/bullet.tscn
-res://scenes/enemy.tscn
-res://scenes/move_menu.tscn
-res://scenes/MoveScene.tscn
-res://Scripts/move_scene.gd
 res://scenes/main_menu.tscn
-res://scenes/main_menu.gd
