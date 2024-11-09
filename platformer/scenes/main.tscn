@@ -1,9 +1,8 @@
-[gd_scene load_steps=6 format=3 uid="uid://dybkast5eobiq"]
+[gd_scene load_steps=5 format=3 uid="uid://dybkast5eobiq"]
 
 [ext_resource type="PackedScene" uid="uid://dyfxlgagnxf2k" path="res://scenes/player.tscn" id="1_0hff1"]
 [ext_resource type="PackedScene" uid="uid://dmypeyjjb8hn1" path="res://scenes/tile_map.tscn" id="2_2o4me"]
 [ext_resource type="PackedScene" uid="uid://r77fimuibc7k" path="res://MoveScene.tscn" id="2_xb21l"]
-[ext_resource type="Script" path="res://scenes/popup_menu.gd" id="3_hsfft"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_41jvn"]
 size = Vector2(34.5, 20)
@@ -19,9 +18,7 @@ scale = Vector2(0.5, 0.5)
 zoom = Vector2(3, 3)
 
 [node name="TileMapLayer" parent="." instance=ExtResource("2_2o4me")]
-
-[node name="PopupMenu" type="PopupMenu" parent="."]
-script = ExtResource("3_hsfft")
+position = Vector2(16, -8)
 
 [node name="MoveScene" parent="." instance=ExtResource("2_xb21l")]
 
