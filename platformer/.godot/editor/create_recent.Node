@@ -1,8 +1,1 @@
-Button
-Label
-MenuButton
-VBoxContainer
-MarginContainer
-CollisionShape2D
-Area2D
-PopupMenu
+AnimatedSprite2D

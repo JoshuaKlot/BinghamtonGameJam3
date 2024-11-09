@@ -1,6 +1,4 @@
 res://scenes/main.tscn
 res://Scripts/bullet.gd
-res://MoveScene.tscn
-res://Scripts/move_scene.gd
-res://Scripts/move_menu.gd
-res://scenes/move_menu.tscn
+res://Scripts/player.gd
+res://scenes/player.tscn
