@@ -1,5 +1,6 @@
 extends CharacterBody2D
 
+var damage = 1
 const SPEED = 100.0
 const JUMP_VELOCITY = -400.0
 const bullet_speed = 300.0

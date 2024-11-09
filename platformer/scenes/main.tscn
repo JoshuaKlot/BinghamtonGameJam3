@@ -1,12 +1,14 @@
-[gd_scene load_steps=4 format=3 uid="uid://dybkast5eobiq"]
+[gd_scene load_steps=5 format=3 uid="uid://dybkast5eobiq"]
 
 [ext_resource type="PackedScene" uid="uid://dyfxlgagnxf2k" path="res://scenes/player.tscn" id="1_0hff1"]
 [ext_resource type="PackedScene" uid="uid://dmypeyjjb8hn1" path="res://scenes/tile_map.tscn" id="2_2o4me"]
 [ext_resource type="Texture2D" uid="uid://duo4hrdp7px3s" path="res://gamejamdoorlocked.webp" id="3_3c0yr"]
+[ext_resource type="PackedScene" uid="uid://s7smo057chtv" path="res://scenes/enemy.tscn" id="4_86tbr"]
 
 [node name="Main" type="Node"]
 
 [node name="TileMapLayer" parent="." instance=ExtResource("2_2o4me")]
+visible = false
 
 [node name="TextureRect" type="TextureRect" parent="."]
 offset_left = -137.0
@@ -16,7 +18,8 @@ offset_bottom = -13.0
 texture = ExtResource("3_3c0yr")
 stretch_mode = 4
 
-[node name="CharacterBody2D" parent="." instance=ExtResource("1_0hff1")]
+[node name="Player" parent="." instance=ExtResource("1_0hff1")]
+unique_name_in_owner = true
 position = Vector2(-2, -131)
 collision_layer = 0
 
@@ -26,3 +29,11 @@ position = Vector2(23, 0)
 [node name="Camera2D" type="Camera2D" parent="Node2D"]
 position = Vector2(160, -8)
 scale = Vector2(0.5, 0.5)
+
+[node name="enemy" parent="." instance=ExtResource("4_86tbr")]
+position = Vector2(397, 119)
+scale = Vector2(2, 2)
+
+[node name="enemy2" parent="." instance=ExtResource("4_86tbr")]
+position = Vector2(394, 38)
+scale = Vector2(2, 2)
