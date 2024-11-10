@@ -1,0 +1,39 @@
+[gd_scene load_steps=6 format=3 uid="uid://bowxkw1ku0rvb"]
+
+[ext_resource type="Script" path="res://scenes/kingdice.gd" id="1_4cv6v"]
+[ext_resource type="Texture2D" uid="uid://c2q0dwmc1cmyi" path="res://sprites/kingdice1.png" id="1_rnvu1"]
+[ext_resource type="Texture2D" uid="uid://ddvo533jqi84v" path="res://sprites/kingdice2.png" id="2_edv5d"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_fgcrj"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_rnvu1")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_edv5d")
+}],
+"loop": true,
+"name": &"default",
+"speed": 100.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ummdm"]
+size = Vector2(50, 39)
+
+[node name="CharacterBody2D" type="CharacterBody2D"]
+script = ExtResource("1_4cv6v")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+rotation = -1.5708
+sprite_frames = SubResource("SpriteFrames_fgcrj")
+frame_progress = 0.2853
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(2, -3)
+shape = SubResource("RectangleShape2D_ummdm")
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 3.0
+one_shot = true
+autostart = true
