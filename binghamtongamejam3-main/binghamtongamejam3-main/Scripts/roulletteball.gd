@@ -30,3 +30,8 @@ func _process(delta: float) -> void:
 func take_damage():
 	print(player.damage)
 	HEALTH = HEALTH - player.damage
+
+
+func _on_area_2d_area_entered(area: Area2D) -> void:
+	if area.get_parent().has_method("damage_taken"):
+		area.get_parent().damage_taken()

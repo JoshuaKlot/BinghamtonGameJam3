@@ -9,6 +9,7 @@ var HEALTH = 10
 func _ready() -> void:
 	$AnimatedSprite2D.play("rolling")
 	$RollTimer.start()
+	add_to_group("enemy")
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
@@ -22,7 +23,7 @@ func _process(delta: float) -> void:
 		rolling=false
 		var instance = bullet.instantiate()
 		get_parent().add_child(instance)
-		instance.global_position = global_position+Vector2(randf_range(-1,1)*10,randf_range(-1,1)*10)
+		instance.global_position = global_position
 		instance.rotation = rotation
 		
 	if $FireTimer.time_left==0 and not rolling:
@@ -33,3 +34,8 @@ func _process(delta: float) -> void:
 func take_damage():
 	print(player.damage)
 	HEALTH = HEALTH - player.damage
+
+
+func _on_area_2d_area_entered(area: Area2D) -> void:
+	if area.get_parent().has_method("damage_taken"):
+		area.get_parent().damage_taken()

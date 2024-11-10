@@ -17,5 +17,5 @@ func _on_area_2d_area_entered(area: Area2D) -> void:
 		queue_free()
 	if area.get_parent().has_method("damage_taken"): 
 		pass
-	if area.get_parent().name == "Bullet":
+	else:
 		queue_free()

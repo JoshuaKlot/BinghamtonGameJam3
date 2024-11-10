@@ -14,9 +14,3 @@ func _process(delta: float) -> void:
 func _on_area_2d_open() -> void:
 	$CollisionShape2D6.disabled = true
 	#print("OpenSTATIC")
-
-func take_damage():
-	pass
-
-func damage_taken():
-	pass

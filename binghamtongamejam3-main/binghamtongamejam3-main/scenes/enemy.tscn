@@ -6,7 +6,7 @@
 [ext_resource type="Texture2D" uid="uid://besxuw0ok18ie" path="res://sprites/die3.png" id="4_qeuru"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_dys1b"]
-size = Vector2(26, 26)
+size = Vector2(23, 23)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_cfy22"]
 animations = [{
@@ -28,8 +28,8 @@ animations = [{
 "speed": 16.0
 }]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_bmbvt"]
-size = Vector2(26, 26)
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_xav3x"]
+size = Vector2(28, 28)
 
 [node name="enemy" type="CharacterBody2D"]
 collision_layer = 4
@@ -37,6 +37,7 @@ collision_mask = 15
 script = ExtResource("1_pkgk4")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0.5, 0.5)
 shape = SubResource("RectangleShape2D_dys1b")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
@@ -48,5 +49,7 @@ frame_progress = 0.860673
 collision_layer = 4
 collision_mask = 15
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
-shape = SubResource("RectangleShape2D_bmbvt")
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="Area2D"]
+shape = SubResource("RectangleShape2D_xav3x")
+
+[connection signal="area_entered" from="Area2D" to="." method="_on_area_2d_area_entered"]

@@ -1,5 +1,6 @@
 extends CharacterBody2D
 
+var room = 0
 var damage = 1
 var basedamage = 1
 var baseSpeed = 100.0
@@ -63,7 +64,7 @@ func _physics_process(delta: float) -> void:
 	
 	look_at(get_global_mouse_position())
 	if health <= 0:
-		queue_free() #restart menu
+		get_tree().change_scene_to_file("res://scenes/main_menu.tscn")
 		
 	shooting(delta)
 	move()
