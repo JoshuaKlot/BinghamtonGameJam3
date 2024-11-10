@@ -52,3 +52,10 @@ frame_progress = 0.627981
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(-0.5, -0.5)
 shape = SubResource("CircleShape2D_cny7h")
+
+[node name="Area2D" type="Area2D" parent="."]
+collision_mask = 28
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(-0.5, -0.5)
+shape = SubResource("CircleShape2D_cny7h")

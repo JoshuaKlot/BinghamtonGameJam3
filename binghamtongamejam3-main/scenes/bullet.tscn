@@ -9,7 +9,7 @@ radius = 9.0
 [sub_resource type="CircleShape2D" id="CircleShape2D_otcc4"]
 radius = 9.0
 
-[node name="CharacterBody2D" type="CharacterBody2D"]
+[node name="Bullet" type="CharacterBody2D"]
 collision_layer = 2
 collision_mask = 12
 script = ExtResource("2_wbu2n")

@@ -1,14 +1,14 @@
 [gd_scene load_steps=4 format=3 uid="uid://dym05qe51j37v"]
 
 [ext_resource type="Texture2D" uid="uid://f7758vrdlw2" path="res://sprites/bullet.png" id="1_kwbgj"]
-[ext_resource type="Script" path="res://Scripts/casinobullet.gd" id="1_v3jbx"]
+[ext_resource type="Script" path="res://scenes/casinobullet.gd" id="1_nlkl5"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_534mc"]
 radius = 9.0
 
 [node name="CasinoBullet" type="CharacterBody2D"]
 collision_mask = 9
-script = ExtResource("1_v3jbx")
+script = ExtResource("1_nlkl5")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("CircleShape2D_534mc")
