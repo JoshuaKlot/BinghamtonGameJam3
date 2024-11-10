@@ -1,0 +1,25 @@
+[gd_scene load_steps=4 format=3 uid="uid://dym05qe51j37v"]
+
+[ext_resource type="Texture2D" uid="uid://f7758vrdlw2" path="res://sprites/bullet.png" id="1_kwbgj"]
+[ext_resource type="Script" path="res://Scripts/casinobullet.gd" id="1_v3jbx"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_534mc"]
+radius = 9.0
+
+[node name="CasinoBullet" type="CharacterBody2D"]
+collision_mask = 9
+script = ExtResource("1_v3jbx")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_534mc")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+modulate = Color(1, 0.0196078, 0, 1)
+texture = ExtResource("1_kwbgj")
+
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="Area2D"]
+shape = SubResource("CircleShape2D_534mc")
+
+[connection signal="area_entered" from="Area2D" to="." method="_on_area_2d_area_entered"]
