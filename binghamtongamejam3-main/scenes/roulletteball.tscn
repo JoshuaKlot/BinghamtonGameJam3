@@ -1,0 +1,66 @@
+[gd_scene load_steps=9 format=3 uid="uid://j8wmnufdcx3v"]
+
+[ext_resource type="Texture2D" uid="uid://b2xidguj6g3om" path="res://sprites/roulette1.png" id="1_4d3xa"]
+[ext_resource type="Script" path="res://Scripts/roulletteball.gd" id="1_048ae"]
+[ext_resource type="Texture2D" uid="uid://ddelajk7n24vf" path="res://sprites/roulette2.png" id="2_kqt7o"]
+[ext_resource type="Texture2D" uid="uid://c8e4ypkm75up4" path="res://sprites/roulette3.png" id="3_fan43"]
+[ext_resource type="Texture2D" uid="uid://bv1odnq6d10g4" path="res://sprites/roulette4.png" id="4_bj8ye"]
+[ext_resource type="Texture2D" uid="uid://cn6a5b0eo667h" path="res://sprites/roulette5.png" id="5_wxh4u"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_law28"]
+radius = 25.0
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_436ru"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_4d3xa")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_kqt7o")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_fan43")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_bj8ye")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_wxh4u")
+}],
+"loop": true,
+"name": &"default",
+"speed": 12.0
+}]
+
+[node name="roulletteball" type="CharacterBody2D"]
+collision_layer = 4
+collision_mask = 15
+script = ExtResource("1_048ae")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_law28")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+scale = Vector2(1.5, 1.5)
+sprite_frames = SubResource("SpriteFrames_436ru")
+frame_progress = 0.0452246
+
+[node name="Bottom" type="RayCast2D" parent="."]
+target_position = Vector2(0, 33)
+
+[node name="Left" type="RayCast2D" parent="."]
+target_position = Vector2(-32, 0)
+
+[node name="Top" type="RayCast2D" parent="."]
+target_position = Vector2(0, -32)
+
+[node name="Right" type="RayCast2D" parent="."]
+target_position = Vector2(33, 0)
+
+[node name="Area2D" type="Area2D" parent="."]
+collision_layer = 4
+collision_mask = 15
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+shape = SubResource("CircleShape2D_law28")

@@ -1,0 +1,64 @@
+[gd_scene load_steps=8 format=3 uid="uid://b64b4vrai4o5u"]
+
+[ext_resource type="Texture2D" uid="uid://dld0fd2et0d4f" path="res://sprites/slotoverhead1.png" id="1_6io7b"]
+[ext_resource type="Script" path="res://Scripts/slot_machine.gd" id="1_c1r23"]
+[ext_resource type="Texture2D" uid="uid://cnoagbxwq7ndn" path="res://sprites/slotoverhead2.png" id="2_adr85"]
+[ext_resource type="Texture2D" uid="uid://dxbiducfaikmv" path="res://sprites/slotoverhead3.png" id="3_c6osa"]
+[ext_resource type="Texture2D" uid="uid://btph5bh0rx1af" path="res://sprites/slotoverhead4.png" id="4_j6lse"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_2uqh8"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_6io7b")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_adr85")
+}],
+"loop": true,
+"name": &"rolling",
+"speed": 24.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("3_c6osa")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_j6lse")
+}],
+"loop": true,
+"name": &"winner",
+"speed": 8.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_a5thm"]
+size = Vector2(48, 48)
+
+[node name="slotMachine" type="Area2D"]
+collision_layer = 4
+collision_mask = 15
+script = ExtResource("1_c1r23")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+scale = Vector2(1.5, 1.5)
+sprite_frames = SubResource("SpriteFrames_2uqh8")
+animation = &"winner"
+frame_progress = 0.822198
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_a5thm")
+
+[node name="RollTimer" type="Timer" parent="."]
+wait_time = 2.0
+one_shot = true
+
+[node name="FireTimer" type="Timer" parent="."]
+process_callback = 0
+one_shot = true
+
+[node name="Area2D" type="Area2D" parent="."]
+collision_layer = 4
+collision_mask = 15
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+shape = SubResource("RectangleShape2D_a5thm")

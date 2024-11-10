@@ -1,0 +1,143 @@
+[gd_scene load_steps=17 format=3 uid="uid://dybkast5eobiq"]
+
+[ext_resource type="PackedScene" uid="uid://dyfxlgagnxf2k" path="res://scenes/player.tscn" id="1_0hff1"]
+[ext_resource type="PackedScene" uid="uid://dmypeyjjb8hn1" path="res://scenes/tile_map.tscn" id="2_2o4me"]
+[ext_resource type="Texture2D" uid="uid://duo4hrdp7px3s" path="res://gamejamdoorlocked.webp" id="3_3c0yr"]
+[ext_resource type="PackedScene" uid="uid://s7smo057chtv" path="res://scenes/enemy.tscn" id="4_86tbr"]
+[ext_resource type="PackedScene" uid="uid://j8wmnufdcx3v" path="res://scenes/roulletteball.tscn" id="5_41fq5"]
+[ext_resource type="PackedScene" uid="uid://b64b4vrai4o5u" path="res://scenes/slot_machine.tscn" id="6_sw7d7"]
+[ext_resource type="Script" path="res://Scripts/area_2d.gd" id="7_vh6ut"]
+[ext_resource type="Script" path="res://Scripts/Walls2.gd" id="8_4ih51"]
+[ext_resource type="Script" path="res://Scripts/walls.gd" id="9_s2ad2"]
+[ext_resource type="PackedScene" uid="uid://r77fimuibc7k" path="res://MoveScene.tscn" id="10_d007i"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_8kyp5"]
+size = Vector2(560, 376)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_vx2s0"]
+size = Vector2(38.5, 480)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_leotr"]
+size = Vector2(538.5, 41)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ujg3x"]
+size = Vector2(241, 62.75)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_xw1yg"]
+size = Vector2(78, 65)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_tb0mi"]
+size = Vector2(76, 51)
+
+[node name="Main" type="Node"]
+
+[node name="TileMapLayer" parent="." instance=ExtResource("2_2o4me")]
+visible = false
+
+[node name="Area2D" type="Area2D" parent="."]
+script = ExtResource("7_vh6ut")
+
+[node name="TextureRect" type="TextureRect" parent="Area2D"]
+offset_left = -137.0
+offset_top = -248.0
+offset_right = 503.0
+offset_bottom = 232.0
+texture = ExtResource("3_3c0yr")
+stretch_mode = 4
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(183, 1)
+shape = SubResource("RectangleShape2D_8kyp5")
+
+[node name="Player" parent="." instance=ExtResource("1_0hff1")]
+unique_name_in_owner = true
+position = Vector2(-2, -131)
+
+[node name="Node2D" type="Node2D" parent="."]
+position = Vector2(23, 0)
+
+[node name="Camera2D" type="Camera2D" parent="Node2D"]
+position = Vector2(160, -8)
+scale = Vector2(0.5, 0.5)
+
+[node name="enemy" parent="." instance=ExtResource("4_86tbr")]
+position = Vector2(397, 119)
+scale = Vector2(2, 2)
+
+[node name="enemy2" parent="." instance=ExtResource("4_86tbr")]
+position = Vector2(394, 38)
+scale = Vector2(2, 2)
+
+[node name="roulletteball" parent="." instance=ExtResource("5_41fq5")]
+position = Vector2(81, 102)
+
+[node name="slotMachine" parent="." instance=ExtResource("6_sw7d7")]
+position = Vector2(241, -32)
+
+[node name="Walls2" type="StaticBody2D" parent="."]
+collision_layer = 8
+script = ExtResource("8_4ih51")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="Walls2"]
+position = Vector2(484, -8)
+shape = SubResource("RectangleShape2D_vx2s0")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Walls2"]
+position = Vector2(-116.25, -8)
+shape = SubResource("RectangleShape2D_vx2s0")
+
+[node name="CollisionShape2D3" type="CollisionShape2D" parent="Walls2"]
+position = Vector2(181.75, 211.5)
+shape = SubResource("RectangleShape2D_leotr")
+
+[node name="CollisionShape2D4" type="CollisionShape2D" parent="Walls2"]
+position = Vector2(24, -219)
+shape = SubResource("RectangleShape2D_ujg3x")
+
+[node name="CollisionShape2D5" type="CollisionShape2D" parent="Walls2"]
+position = Vector2(341.5, -219)
+shape = SubResource("RectangleShape2D_ujg3x")
+
+[node name="CollisionShape2D6" type="CollisionShape2D" parent="Walls2"]
+position = Vector2(183, -220)
+shape = SubResource("RectangleShape2D_xw1yg")
+
+[node name="Walls" type="Area2D" parent="."]
+collision_layer = 8
+collision_mask = 7
+script = ExtResource("9_s2ad2")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="Walls"]
+position = Vector2(477, -8)
+shape = SubResource("RectangleShape2D_vx2s0")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Walls"]
+position = Vector2(-112, -8)
+shape = SubResource("RectangleShape2D_vx2s0")
+
+[node name="CollisionShape2D3" type="CollisionShape2D" parent="Walls"]
+position = Vector2(181.75, 207)
+shape = SubResource("RectangleShape2D_leotr")
+
+[node name="CollisionShape2D4" type="CollisionShape2D" parent="Walls"]
+position = Vector2(29, -214.25)
+shape = SubResource("RectangleShape2D_ujg3x")
+
+[node name="CollisionShape2D5" type="CollisionShape2D" parent="Walls"]
+position = Vector2(337, -214)
+shape = SubResource("RectangleShape2D_ujg3x")
+
+[node name="CollisionShape2D6" type="CollisionShape2D" parent="Walls"]
+position = Vector2(183, -214.5)
+shape = SubResource("RectangleShape2D_xw1yg")
+
+[node name="Area2D2" parent="." instance=ExtResource("10_d007i")]
+position = Vector2(247, -29)
+collision_layer = 16
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D2"]
+position = Vector2(-63, -192.5)
+shape = SubResource("RectangleShape2D_tb0mi")
+
+[connection signal="open" from="Area2D" to="Walls2" method="_on_area_2d_open"]
+[connection signal="open" from="Area2D" to="Walls" method="_on_area_2d_open"]

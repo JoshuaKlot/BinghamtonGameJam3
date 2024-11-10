@@ -1,0 +1,54 @@
+[gd_scene load_steps=7 format=3 uid="uid://dyfxlgagnxf2k"]
+
+[ext_resource type="Script" path="res://Scripts/player.gd" id="1_1m1jh"]
+[ext_resource type="Texture2D" uid="uid://0p871l52u58k" path="res://sprites/PlayerOverhead1.png" id="2_hh3o1"]
+[ext_resource type="Texture2D" uid="uid://ckfhl535w83or" path="res://sprites/PlayerOverhead2.png" id="3_g04tb"]
+[ext_resource type="Texture2D" uid="uid://cxlw2ei5wikmw" path="res://sprites/PlayerOverhead3.png" id="4_q5ibj"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_vnqkp"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_hh3o1")
+}],
+"loop": true,
+"name": &"Idle",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("3_g04tb")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_hh3o1")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_q5ibj")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_hh3o1")
+}],
+"loop": true,
+"name": &"Walk",
+"speed": 12.0
+}]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_cny7h"]
+radius = 11.5109
+
+[node name="CharacterBody2D" type="CharacterBody2D"]
+scale = Vector2(2, 2)
+collision_mask = 28
+script = ExtResource("1_1m1jh")
+
+[node name="bulletContainer" type="Node" parent="."]
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+rotation = 1.5708
+sprite_frames = SubResource("SpriteFrames_vnqkp")
+animation = &"Walk"
+frame_progress = 0.627981
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(-0.5, -0.5)
+shape = SubResource("CircleShape2D_cny7h")
