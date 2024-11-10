@@ -1,10 +1,15 @@
 ea4bc82a6ad023ab7ee23ee620429895
+<<<<<<< Updated upstream
 ::res://::1731178357
+=======
+::res://::1731196555
+>>>>>>> Stashed changes
 character_movement.gd::GDScript::-1::1731173447::0::1::::<>CharacterBody2D<>::
 gamejamdoorlocked.webp::CompressedTexture2D::8593714404000626366::1731177820::1731178363::1::::<><>::
 gamejamdoorunlocked.webp::CompressedTexture2D::6949072020786212995::1731177835::1731178363::1::::<><>::
 icon.svg::CompressedTexture2D::7513647314386832877::1731173447::1731175051::1::::<><>::
 player.gd::GDScript::-1::1731173447::0::1::::<>CharacterBody2D<>::
+<<<<<<< Updated upstream
 ::res://scenes/::1731178227
 bullet.tscn::PackedScene::5243674040101646541::1731173447::0::1::::<><>::uid://f7758vrdlw2::::res://sprites/bullet.png<>res://Scripts/bullet.gd
 main.tscn::PackedScene::8846466822214351060::1731178227::0::1::::<><>::uid://dyfxlgagnxf2k::::res://scenes/player.tscn<>uid://dmypeyjjb8hn1::::res://scenes/tile_map.tscn
@@ -14,6 +19,22 @@ tile_map.tscn::PackedScene::8051992413775446888::1731177742::0::1::::<><>::uid:/
 bullet.gd::GDScript::-1::1731173447::0::1::::<>CharacterBody2D<>::
 player.gd::GDScript::-1::1731175007::0::1::::<>CharacterBody2D<>::
 ::res://sprites/::1731176292
+=======
+::res://scenes/::1731198018
+bullet.tscn::PackedScene::5243674040101646541::1731198018::0::1::::<><>::uid://f7758vrdlw2::::res://sprites/bullet.png<>res://Scripts/bullet.gd
+enemy.tscn::PackedScene::1330574384364076103::1731198018::0::1::::<><>::uid://c206ikh2wx6m7::::res://sprites/player.png<>res://Scripts/enemy.gd
+main.tscn::PackedScene::8846466822214351060::1731198018::0::1::::<><>::uid://dyfxlgagnxf2k::::res://scenes/player.tscn<>res://scenes/main.gd<>uid://dmypeyjjb8hn1::::res://scenes/tile_map.tscn<>res://scenes/area_2d.gd<>uid://duo4hrdp7px3s::::res://gamejamdoorlocked.webp<>uid://s7smo057chtv::::res://scenes/enemy.tscn
+player.tscn::PackedScene::8855532637159958268::1731198018::0::1::::<><>::res://Scripts/player.gd<>uid://0p871l52u58k::::res://sprites/PlayerOverhead1.png<>uid://ckfhl535w83or::::res://sprites/PlayerOverhead2.png<>uid://cxlw2ei5wikmw::::res://sprites/PlayerOverhead3.png
+area_2d.gd::GDScript::-1::1731198015::0::1::::<>Area2D<>::
+main.gd::GDScript::-1::1731195949::0::1::::<>Node<>::
+tile_map.tscn::PackedScene::8051992413775446888::1731198018::0::1::::<><>::uid://t0aobh2wr7vd::::res://sprites/block.png
+::res://Scripts/::1731196344
+bullet.gd::GDScript::-1::1731189180::0::1::::<>CharacterBody2D<>::
+enemy.gd::GDScript::-1::1731196344::0::1::::<>CharacterBody2D<>::
+player.gd::GDScript::-1::1731190251::0::1::::<>CharacterBody2D<>::
+Walls.gd::GDScript::-1::1731198312::0::1::::<>StaticBody2D<>::
+::res://sprites/::1731189172
+>>>>>>> Stashed changes
 block.png::CompressedTexture2D::1385222538682621013::1731173447::1731175051::1::::<><>::
 bullet.png::CompressedTexture2D::12323605599825467::1731173447::1731175051::1::::<><>::
 demon.png::CompressedTexture2D::6065199980772681601::1731173447::1731175051::1::::<><>::

@@ -1,3 +1,15 @@
 res://scenes/main.tscn
 res://scenes/player.tscn
 res://scenes/tile_map.tscn
+<<<<<<< Updated upstream
+=======
+res://scenes/bullet.tscn
+res://scenes/enemy.tscn
+res://Scripts/bullet.gd
+res://Scripts/player.gd
+res://Scripts/enemy.gd
+res://scenes/area_2d.gd
+res://scenes/main.gd
+res://Scripts/Walls2.gd
+res://Scripts/walls.gd
+>>>>>>> Stashed changes

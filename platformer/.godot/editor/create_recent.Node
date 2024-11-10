@@ -1,3 +1,9 @@
+<<<<<<< Updated upstream
+=======
+CollisionShape2D
+Area2D
+StaticBody2D
+>>>>>>> Stashed changes
 TextureRect
 Node2D
 AnimatedSprite2D
