@@ -10,9 +10,16 @@ const bullet_speed = 300.0
 var lastdirection = Vector2.DOWN
 var bullet = preload("res://scenes/bullet.tscn")
 @onready var main = get_node("bulletContainer")
+var shootTimer = 0.0
+var isShooting = true
+
+var health = 3
+var baseHealth = 3
 
 var baseCritChance = 0.10
 var critChance = 0.10
+
+var attackSpeed = 5
 
 var allPowersArray = [50,10,5,0,10,0,0,0,0,0,0,0] #all the powers
 #all indices and their powers
@@ -48,19 +55,35 @@ func _process(delta: float) -> void:
 	if allPowersArray[9]:
 		pass
 func _physics_process(delta: float) -> void:
-
+	
 	look_at(get_global_mouse_position())
+	if health <= 0:
+		queue_free() #restart menu
+		
+	shooting(delta)
+	move()
 
 
-	if Input.is_action_just_pressed("shoot"):
-		var instance = bullet.instantiate()
-		if allPowersArray[1]:  #BASED ON PELLET POWER size up
-			instance.scale = Vector2(5,5)
-		calculateCrit()
-		get_tree().root.add_child(instance)
-		instance.global_position = global_position
-		instance.rotation = rotation
+func calculateCrit():
+	if randf() < (1 - critChance):
+		damage = basedamage
+	else:
+		damage = 2 * basedamage
+		
+func take_damage():
+	print(health)
+	health = health - 1
+	
+func shootBullet():
+	var instance = bullet.instantiate()
+	if allPowersArray[1]:  #BASED ON PELLET POWER size up
+		instance.scale = Vector2(5,5)
+	calculateCrit()
+	get_tree().root.add_child(instance)
+	instance.global_position = global_position
+	instance.rotation = rotation
 
+func move():
 	var direction := Input.get_axis("ui_left", "ui_right")
 	var direction2 := Input.get_axis("ui_up", "ui_down")
 
@@ -74,10 +97,17 @@ func _physics_process(delta: float) -> void:
 		_animated_sprite.play("Idle")
 
 	move_and_slide()
-
-
-func calculateCrit():
-	if randf() < (1 - critChance):
-		damage = basedamage
-	else:
-		damage = 2 * basedamage
+	
+func shooting(delta):
+	if Input.is_action_pressed("shoot"):
+		if isShooting:
+			shootTimer += delta
+			if shootTimer > attackSpeed:
+				shootBullet()
+				shootTimer = 0
+			else:
+				shootBullet()
+				isShooting = true
+				shootTimer = 0
+	if Input.is_action_just_released("shoot"):
+		isShooting = false
