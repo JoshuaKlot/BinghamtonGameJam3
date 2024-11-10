@@ -16,7 +16,7 @@ func _physics_process(delta: float) -> void:
 
 
 func _process(delta: float) -> void:
-	if HEALTH == 0:
+	if HEALTH <= 0:
 		queue_free()
 
 

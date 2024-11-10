@@ -16,7 +16,7 @@ func _process(delta: float) -> void:
 		$FireTimer.start()
 		rolling=false
 		var instance = bullet.instantiate()
-		get_tree().root.main.add_child(instance)
+		get_parent().add_child(instance)
 		instance.global_position = global_position
 		instance.rotation = rotation
 		

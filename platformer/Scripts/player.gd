@@ -29,55 +29,55 @@ var allPowersArray = [50,10,5,0,10,0,0,0,0,0,0,0] #all the powers
 
 #Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
-    if allPowersArray[0]:  #damage up
-        damage = basedamage + allPowersArray[0]
-    if allPowersArray[2]:  #critical hits
-        critChance = baseCritChance + (0.05 * allPowersArray[2])
-    if allPowersArray[3]:  #Max HP up
-        pass
-    if allPowersArray[4]:  #runSpeed up
-        SPEED = baseSpeed + (10 * allPowersArray[4])
-    if allPowersArray[5]:  #
-        pass
-    if allPowersArray[6]:
-        pass
-    if allPowersArray[7]:
-        pass
-    if allPowersArray[8]:
-        pass
-    if allPowersArray[9]:
-        pass
+	if allPowersArray[0]:  #damage up
+		damage = basedamage + allPowersArray[0]
+	if allPowersArray[2]:  #critical hits
+		critChance = baseCritChance + (0.05 * allPowersArray[2])
+	if allPowersArray[3]:  #Max HP up
+		pass
+	if allPowersArray[4]:  #runSpeed up
+		SPEED = baseSpeed + (10 * allPowersArray[4])
+	if allPowersArray[5]:  #
+		pass
+	if allPowersArray[6]:
+		pass
+	if allPowersArray[7]:
+		pass
+	if allPowersArray[8]:
+		pass
+	if allPowersArray[9]:
+		pass
 func _physics_process(delta: float) -> void:
 
-    look_at(get_global_mouse_position())
+	look_at(get_global_mouse_position())
 
 
-    if Input.is_action_just_pressed("shoot"):
-        var instance = bullet.instantiate()
-        if allPowersArray[1]:  #BASED ON PELLET POWER size up
-            instance.scale = Vector2(5,5)
-        calculateCrit()
-        get_tree().root.add_child(instance)
-        instance.global_position = global_position
-        instance.rotation = rotation
+	if Input.is_action_just_pressed("shoot"):
+		var instance = bullet.instantiate()
+		if allPowersArray[1]:  #BASED ON PELLET POWER size up
+			instance.scale = Vector2(5,5)
+		calculateCrit()
+		get_tree().root.add_child(instance)
+		instance.global_position = global_position
+		instance.rotation = rotation
 
-    var direction := Input.get_axis("ui_left", "ui_right")
-    var direction2 := Input.get_axis("ui_up", "ui_down")
+	var direction := Input.get_axis("ui_left", "ui_right")
+	var direction2 := Input.get_axis("ui_up", "ui_down")
 
-    if direction or direction2:
-        velocity.x = direction * SPEED
-        velocity.y = direction2 * SPEED
-        _animated_sprite.play("Walk")
-    else:
-        velocity.x = move_toward(velocity.x, 0, SPEED)
-        velocity.y = move_toward(velocity.y, 0, SPEED)
-        _animated_sprite.play("Idle")
+	if direction or direction2:
+		velocity.x = direction * SPEED
+		velocity.y = direction2 * SPEED
+		_animated_sprite.play("Walk")
+	else:
+		velocity.x = move_toward(velocity.x, 0, SPEED)
+		velocity.y = move_toward(velocity.y, 0, SPEED)
+		_animated_sprite.play("Idle")
 
-    move_and_slide()
+	move_and_slide()
 
 
 func calculateCrit():
-    if randf() < (1 - critChance):
-        damage = basedamage
-    else:
-        damage = 2 * basedamage
+	if randf() < (1 - critChance):
+		damage = basedamage
+	else:
+		damage = 2 * basedamage
